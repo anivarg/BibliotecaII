@@ -1,0 +1,91 @@
+﻿@model Biblioteca_eCommerce.Models.Prestamo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdLibro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdLibro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUsuarios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUsuarios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPrest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPrest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDevol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDevol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoxDia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoxDia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantDias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantDias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPrestamo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Biblioteca_eCommerce.Models.Empleado>
+
+@{
+    ViewBag.Title = "Mantenimiento Empleados";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Mantenimiento Empleados</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.laborTanda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcientoComision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.laborTanda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcientoComision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIngreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpleado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdEmpleado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdEmpleado })
+        </td>
+    </tr>
+}
+
+</table>

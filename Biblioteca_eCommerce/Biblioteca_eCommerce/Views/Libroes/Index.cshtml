@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Biblioteca_eCommerce.Models.Libro>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.autores.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bibliografia.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Editora.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignatureTopography)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearPublish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdIdioma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.autores.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bibliografia.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Editora.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SignatureTopography)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearPublish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdIdioma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdLibro }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdLibro }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdLibro })
+        </td>
+    </tr>
+}
+
+</table>

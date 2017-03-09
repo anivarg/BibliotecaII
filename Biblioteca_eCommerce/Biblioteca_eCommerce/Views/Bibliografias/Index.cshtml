@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Biblioteca_eCommerce.Models.Bibliografia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdBibliografia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdBibliografia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdBibliografia })
+        </td>
+    </tr>
+}
+
+</table>

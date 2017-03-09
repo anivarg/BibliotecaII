@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Biblioteca_eCommerce.Models.Prestamo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdLibro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUsuarios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaPrest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDevol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MontoxDia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantDias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdLibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUsuarios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaPrest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaDevol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MontoxDia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantDias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comentario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPrestamo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPrestamo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPrestamo })
+        </td>
+    </tr>
+}
+
+</table>
