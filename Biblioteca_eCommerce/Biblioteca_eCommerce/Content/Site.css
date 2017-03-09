@@ -1,8 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
+﻿
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -21,4 +17,56 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+html, body {
+    height: 100%;
+}
+
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
+}
+
+.navmenu {
+    z-index: 1;
+}
+.navbar {
+    margin-bottom:0px;
+}
+.canvas {
+    position: relative;
+    left: 0;
+    height: 100%;
+    padding: 50px 0 0 0;
+    background: url(images/bibliobg.jpg) center no-repeat #ffff00;
+    background-size: cover;
+}
+/*---------------- mine ---------------*/
+
+.pestana {
+    width: auto;
+    height: 250px;
+    background-color: #CCC;
+}
+
+.forCenter {
+    margin-top: 5%;
+    color: #fff;
+}
+.btntop {
+    margin-top: 7px;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    margin: 50px 0 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.empty {
+    margin-top: 50px;
 }

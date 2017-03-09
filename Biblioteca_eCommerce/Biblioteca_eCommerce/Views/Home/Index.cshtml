@@ -1,8 +1,45 @@
-﻿
+﻿@model IEnumerable<Biblioteca_eCommerce.Models.Libro>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2></h2>
-
+    <div class="canvas">
+        <div class="container">
+            <div class="forCenter col-md-9 col-md-offset-1">
+                
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 align="center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel erat dui. Aliquam lectus urna, fringilla eget dui at, porttitor facilisis magna. </h3>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form>
+                            <input type="text" class="form-control" placeholder="Busca tu libro aqui" name="Search"> <br />
+                            <p align="center"><button type="submit" class="btn btn-danger"> <h4> Busca tu libro</h4></button></p>
+                        </form>
+                    </div>  
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+<div class="empty"> </div>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="panel panel-primary class">
+                    <div class="panel-heading"><h3>@Html.DisplayFor(modelItem => item.Nombre) </h3></div>
+                    <div class="panel-body">
+                        <h4> Genero:@Html.DisplayFor(modelItem => item.Ciencia) </h4>
+                        <h4> Autor: @Html.DisplayFor(modelItem => item.autores.Nombre)</h4>
+                        <p> @Html.DisplayFor(modelItem => item.Editora.Descripcion) </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
 
