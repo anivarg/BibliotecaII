@@ -15,6 +15,7 @@ namespace Biblioteca_eCommerce.Controllers
         private BibliotecaDbContext db = new BibliotecaDbContext();
 
         // GET: Empleadoes
+        [Authorize(Roles = "Administrador, Empleado")]
         public ActionResult Index()
         {
             return View(db.Empleados.ToList());

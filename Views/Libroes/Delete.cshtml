@@ -1,0 +1,105 @@
+﻿@model Biblioteca_eCommerce.Models.Libro
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.autores.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.autores.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bibliografia.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bibliografia.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Editora.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Editora.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SignatureTopography)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SignatureTopography)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearPublish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearPublish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdIdioma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdIdioma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

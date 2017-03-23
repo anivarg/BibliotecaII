@@ -15,9 +15,11 @@ namespace Biblioteca_eCommerce.Controllers
         private BibliotecaDbContext db = new BibliotecaDbContext();
 
         // GET: autores
-        public ActionResult Index()
+        [Authorize(Roles = "Administrador, Empleado")]
+        public ActionResult Index(string Criterio = null)
         {
-            return View(db.autor.ToList());
+            
+            return View(db.autor.Where(p => Criterio == null || p.Nombre.StartsWith(Criterio)).ToList());
         }
 
         // GET: autores/Details/5

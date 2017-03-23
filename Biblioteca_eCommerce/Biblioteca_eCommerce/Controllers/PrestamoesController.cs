@@ -15,6 +15,7 @@ namespace Biblioteca_eCommerce.Controllers
         private BibliotecaDbContext db = new BibliotecaDbContext();
 
         // GET: Prestamoes
+        [Authorize(Roles = "Administrador, Empleado")]
         public ActionResult Index()
         {
             var prestm = db.Prestamos.Include(l => l.Usuario).Include(l => l.Empleado).Include(l => l.Libro);

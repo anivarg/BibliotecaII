@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdmHomeController.cs" />
     <Compile Include="Controllers\autoresController.cs" />
     <Compile Include="Controllers\BibliografiasController.cs" />
     <Compile Include="Controllers\EditorasController.cs" />
@@ -286,6 +287,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_adminLayout.cshtml" />
+    <Content Include="Views\AdmHome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,7 +297,6 @@
     <Folder Include="Views\Bibliografias\" />
     <Folder Include="Views\Editoras\" />
     <Folder Include="Views\Empleadoes\" />
-    <Folder Include="Views\FrontEnd\" />
     <Folder Include="Views\Idiomas\" />
     <Folder Include="Views\Libroes\" />
     <Folder Include="Views\Prestamoes\" />

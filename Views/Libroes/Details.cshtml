@@ -1,0 +1,99 @@
+﻿@model Biblioteca_eCommerce.Models.Libro
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.autores.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.autores.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bibliografia.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bibliografia.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Editora.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Editora.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SignatureTopography)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SignatureTopography)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearPublish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearPublish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdIdioma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdIdioma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdLibro }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -15,6 +15,7 @@ namespace Biblioteca_eCommerce.Controllers
         private BibliotecaDbContext db = new BibliotecaDbContext();
 
         // GET: Usuarios
+        [Authorize(Roles = "Administrador, Empleado")]
         public ActionResult Index()
         {
             using (BibliotecaDbContext db = new BibliotecaDbContext())

@@ -1,0 +1,132 @@
+﻿@*@using Microsoft.AspNetCore.Http*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/Content/AdminTemplate/")vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="@Url.Content("~/Content/AdminTemplate/")vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/AdminTemplate/")dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/AdminTemplate/")dist/css/custom-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="@Url.Content("~/Content/AdminTemplate/")vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="@Url.Content("~/Content/AdminTemplate/")vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Area Administrativa Biblioteca UNAPEC</a>
+
+                @*@if (Context.Session.GetString("IdUsuario") != null)
+                {
+                        <li><a asp-area="" asp-controller="home" asp-action="Logout">Logout</a></li>
+                }
+                else
+                {
+                        <li><a asp-area="" asp-controller="home" asp-action="registroUsuarios">Registrate</a></li>
+                        <li><a asp-area="" asp-controller="home" asp-action="LoggedIn">Login</a></li>
+                }*@
+
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            @Html.ActionLink("Panel de Control", "Index", "Home")
+                        </li>
+                        <li>
+                           @Html.ActionLink("Empleados", "Index", "Empleadoes")
+                        </li>
+                        <li>
+                           @Html.ActionLink("Usuarios", "Index", "Usuarios")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Libros", "Index", "Libroes")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Prestamos", "Index", "Prestamoes")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Autores", "Index", "autores")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Editoras", "Index", "Editoras")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Bibliografias", "Index", "Bibliografias")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Idiomas", "Index", "Idiomas")
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                    </li>
+                    </ul>
+                </div>                     <li
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    @RenderBody()
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </div>
+    <script src="@Url.Content("~/Content/AdminTemplate/")vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@Url.Content("~/Content/AdminTemplate/")vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="@Url.Content("~/Content/AdminTemplate/")vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="@Url.Content("~/Content/AdminTemplate/")vendor/raphael/raphael.min.js"></script>
+    <script src="@Url.Content("~/Content/AdminTemplate/")vendor/morrisjs/morris.min.js"></script>
+    <script src="@Url.Content("~/Content/AdminTemplate/")data/morris-data.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="@Url.Content("~/Content/AdminTemplate/")dist/js/sb-admin-2.js"></script>
+</body>
+</html>

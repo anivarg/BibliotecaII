@@ -12,9 +12,9 @@ namespace Biblioteca_eCommerce.Controllers
     {
         private BibliotecaDbContext db = new BibliotecaDbContext();
 
-        public ActionResult Index()
+        public ActionResult Index(string Criterio = null)
         {
-            var libros = db.Libros.Include(l => l.autores).Include(l => l.Bibliografia).Include(l => l.Editora);
+            var libros = db.Libros.Where(p => Criterio == null || p.Nombre.StartsWith(Criterio)).Include(l => l.autores).Include(l => l.Bibliografia).Include(l => l.Editora);
             return View(libros.ToList());
         }
 
@@ -24,7 +24,7 @@ namespace Biblioteca_eCommerce.Controllers
 
             return View();
         }
-
+   
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
