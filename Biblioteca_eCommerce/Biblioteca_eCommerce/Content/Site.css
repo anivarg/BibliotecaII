@@ -38,10 +38,36 @@ html, body {
     left: 0;
     height: 100%;
     padding: 50px 0 0 0;
-    background: url(images/bibliobg.jpg) center no-repeat #ffff00;
+    background: url(images/bibliobg.jpg) center no-repeat;
     background-size: cover;
 }
 /*---------------- mine ---------------*/
+
+/*------Nav Bar--------*/
+.navbar-inverse {
+    background-color: #332c2c;
+    border:none;
+}
+
+.navbar-brand { /*Logo*/
+    background: url(images/logo.png) no-repeat;
+    text-indent: -2000px;
+    height: auto;
+    margin: 10px 5px 0px 5px;
+    box-sizing: content-box;
+    width: 250px;
+}
+
+.nav .btn-default {
+    color: #CCC;
+    background-color: transparent;
+    font-size: 16px;
+    border:none;
+}
+
+.nav li {
+    margin-top:5px;
+}
 
 .pestana {
     width: auto;
