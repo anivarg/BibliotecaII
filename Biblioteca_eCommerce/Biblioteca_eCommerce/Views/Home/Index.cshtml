@@ -3,43 +3,25 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <div class="canvas">
-        <div class="container">
-            <div class="forCenter col-md-9 col-md-offset-1">
-                
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 align="center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel erat dui. Aliquam lectus urna, fringilla eget dui at, porttitor facilisis magna. </h3>
-                            <br />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <form method="get">
-                            <input type="text" class="form-control" placeholder="Busca tu libro aqui" id="Criterio" name="Criterio"> <br />
-                            <p align="center"><button type="submit" class="btn btn-danger"  id="cmdBuscar" value="Buscar"> <h4> Busca tu libro</h4></button></p>
-                        </form>
-                    </div>  
-                <br />
-                <br />
-            </div>
-        </div>
-    </div>
-<div class="empty"> </div>
-<div class="container">
+    
+<section class="main-content">
     <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-md-3">
-                <div class="panel panel-primary class">
-                    <div class="panel-heading"><h3>@Html.DisplayFor(modelItem => item.Nombre) </h3></div>
-                    <div class="panel-body">
-                        <h4> Genero:@Html.DisplayFor(modelItem => item.Ciencia) </h4>
-                        <h4> Autor: @Html.DisplayFor(modelItem => item.autores.Nombre)</h4>
-                        <p> @Html.DisplayFor(modelItem => item.Editora.Descripcion) </p>
+
+            <article class="col-md-3">
+                <div class="book-panel">
+                    <div class="book-cover">
+                        <img src="http://placehold.it/250x250" />
+                    </div>
+                    <div class="book-description">
+                        <h4 class="book-title"> @Html.DisplayFor(modelItem => item.Nombre)</h4>
+                        <span class="book-author" >@Html.DisplayFor(modelItem => item.autores.Nombre)</span>
+                        <button class="book-rent">Rentar</button>
                     </div>
                 </div>
-            </div>
+            </article>
         }
     </div>
-</div>
+</section>
 

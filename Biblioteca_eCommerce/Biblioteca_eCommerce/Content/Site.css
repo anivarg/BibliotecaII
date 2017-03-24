@@ -1,5 +1,12 @@
 ﻿
 /* Set padding to keep content from hitting the edges */
+
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Raleway');
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -18,32 +25,15 @@ select,
 textarea {
     max-width: 280px;
 }
-html, body {
-    height: 100%;
-}
 
-.navbar-toggle {
-    float: left;
-    margin-left: 15px;
-}
-
-.navmenu {
-    z-index: 1;
-}
-.navbar {
-    margin-bottom:0px;
-}
-.canvas {
-    position: relative;
-    left: 0;
-    height: 100%;
-    padding: 50px 0 0 0;
-    background: url(images/bibliobg.jpg) center no-repeat;
-    background-size: cover;
-}
 /*---------------- mine ---------------*/
 
 /*------Nav Bar--------*/
+
+.navbar {
+    border-radius:0;
+}
+
 .navbar-inverse {
     background-color: #332c2c;
     border:none;
@@ -65,20 +55,68 @@ html, body {
     border:none;
 }
 
+.nav .btn-default:hover {
+    color:white;
+}
+
 .nav li {
     margin-top:5px;
 }
 
+
+/*-------------Body-------------------*/
+
+.book-panel {
+    text-align:center;
+}
+
+.book-cover {
+    overflow:hidden;
+}
+
+.book-cover img {
+    height:250px;
+    margin: auto;
+    width:100%;
+}
+
+.book-title {
+    font-family: 'Arvo', serif;
+    font-weight:bold;
+    font-size:21px;
+    margin-bottom:5px;
+}
+
+.book-author {
+    display: block;
+    font-family: Arvo, serif;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.book-rent {
+    width: 100%;
+    background-color: #7d3232;
+    border-radius: 25px;
+    border: none;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+    .book-rent:hover {
+        background-color: #CCC;
+        color: black;
+    }
 .pestana {
     width: auto;
     height: 250px;
     background-color: #CCC;
 }
 
-.forCenter {
-    margin-top: 5%;
-    color: #fff;
-}
 .btntop {
     margin-top: 7px;
 }
@@ -91,8 +129,4 @@ html, body {
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: #f5f5f5;
-}
-
-.empty {
-    margin-top: 50px;
 }
