@@ -21,8 +21,8 @@ namespace Biblioteca_eCommerce.Models
         [Required]
         public int SignatureTopography { get; set; }
         [Required(ErrorMessage ="Debe introducir la ISBN del Libro")]
-        [Range(1000000000,9999999999, ErrorMessage ="El ISBN debe contener almenos 10 digitos")]
-        public int ISBN { get; set; }
+        [StringLength(14, MinimumLength = 13, ErrorMessage="El ISB Debe ser de 10 a 13 Digitos")]
+        public string ISBN { get; set; }
         [Required(ErrorMessage = "Debe elegir una bibliografia")]
         public int IdBibliografia { get; set; }
         [Required(ErrorMessage = "Debe elegir un autor")]
@@ -36,6 +36,7 @@ namespace Biblioteca_eCommerce.Models
         public string Ciencia { get; set; }
         [Required(ErrorMessage = "Debe elegir el idioma")]
         public string IdIdioma { get; set; }
+        [Range(0, 1, ErrorMessage = "El ISBN debe contener almenos 10 digitos")]
         public int estado { get; set; }
 
         public virtual Bibliografia Bibliografia { get; set; }

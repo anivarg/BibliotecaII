@@ -18,13 +18,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.autores.Autor)
+            @Html.DisplayNameFor(model => model.autores.IdAutor)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Bibliografia.Descripcion)
+            @Html.DisplayNameFor(model => model.Bibliografia.IdBibliografia)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Editora.Descripcion)
+            @Html.DisplayNameFor(model => model.Editora.IdEditoras)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -53,13 +53,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.autores.Nombre)
+            @Html.DisplayFor(modelItem => item.autores.IdAutor)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Bibliografia.Descripcion)
+            @Html.DisplayFor(modelItem => item.Bibliografia.IdBibliografia)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Editora.Descripcion)
+            @Html.DisplayFor(modelItem => item.Editora.IdEditoras)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nombre)
