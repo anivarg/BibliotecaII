@@ -20,11 +20,11 @@ body {
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 /*---------------- mine ---------------*/
 
@@ -32,6 +32,7 @@ textarea {
 
 .navbar {
     border-radius:0;
+    margin-bottom:0px;
 }
 
 .navbar-inverse {
@@ -121,6 +122,33 @@ textarea {
     margin-top: 7px;
 }
 
+
+/******Search ********/
+.search {
+    height: 200px;
+    background-image: url('https://tympanus.net/Development/BookPreview/img/bgheader.jpg');
+    background-size:cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stylish-input-group .input-group-addon {
+    background: white !important;
+}
+
+.stylish-input-group .form-control {
+    border-right: 0;
+    box-shadow: 0 0 0;
+    border-color: #ccc;
+}
+
+.stylish-input-group button {
+    border: 0;
+    background: transparent;
+}
 .footer {
     position: relative;
     bottom: 0;
