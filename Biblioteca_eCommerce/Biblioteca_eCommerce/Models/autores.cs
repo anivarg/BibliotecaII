@@ -16,8 +16,14 @@ namespace Biblioteca_eCommerce.Models
         }
         [Key]
         public int IdAutor { get; set; }
+        [Required(ErrorMessage ="Debe ingresar un autor")]
+        [StringLength(24)]
         public string Nombre { get; set; }
+        [Required(ErrorMessage ="Debe elegir un pais")]
+        [StringLength(128)]
         public string Pais { get; set; }
+        [Required(ErrorMessage ="Debe especificar un idioma")]
+        [StringLength(128)]
         public string Idioma { get; set; }
         public int Estado { get; set; }
 

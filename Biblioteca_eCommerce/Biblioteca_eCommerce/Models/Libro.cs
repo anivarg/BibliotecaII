@@ -15,15 +15,25 @@ namespace Biblioteca_eCommerce.Models
 
         [Key]
         public int IdLibro { get; set; }
+        [Required(ErrorMessage ="Debe introducir el nombre del libro")]
+        [StringLength(100)]
         public string Nombre { get; set; }
+        [Required]
         public int SignatureTopography { get; set; }
+        [Required(ErrorMessage ="Debe introducir la ISBN del Libro")]
         public int ISBN { get; set; }
+        [Required(ErrorMessage = "Debe elegir una bibliografia")]
         public int IdBibliografia { get; set; }
+        [Required(ErrorMessage = "Debe elegir un autor")]
         public int IdAutor { get; set; }
+        [Required(ErrorMessage = "Debe elegir la fecha de publicación")]
         [DataType(DataType.Date)]
         public DateTime YearPublish { get; set; }
+        [Required(ErrorMessage = "Debe elegir la editora")]
         public int IdEditoras { get; set; }
+        [Required(ErrorMessage = "Debe elegir el genero literario")]
         public string Ciencia { get; set; }
+        [Required(ErrorMessage = "Debe elegir el idioma")]
         public string IdIdioma { get; set; }
         public int estado { get; set; }
 

@@ -15,6 +15,8 @@ namespace Biblioteca_eCommerce.Models
         }
         [Key]
         public int IdBibliografia { get; set; }
+        [Required(ErrorMessage ="Debe ingresar la descripcion de la bibliografia")]
+        [StringLength(64)]
         public string Descripcion { get; set; }
         public int Estado { get; set; }
 
