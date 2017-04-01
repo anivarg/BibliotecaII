@@ -21,6 +21,7 @@ namespace Biblioteca_eCommerce.Models
         [Required]
         public int SignatureTopography { get; set; }
         [Required(ErrorMessage ="Debe introducir la ISBN del Libro")]
+        [Range(1000000000,9999999999, ErrorMessage ="El ISBN debe contener almenos 10 digitos")]
         public int ISBN { get; set; }
         [Required(ErrorMessage = "Debe elegir una bibliografia")]
         public int IdBibliografia { get; set; }
