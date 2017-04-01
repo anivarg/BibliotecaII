@@ -34,8 +34,8 @@
                         <div class="book-cover">
                             <img src="http://placehold.it/250x250" />
                         </div>
-                        <div class="book-description">
-                            <h4 class="book-title" data-isbn=""> @Html.DisplayFor(modelItem => item.Nombre)</h4>
+                        <div class="book-description" data-isbn='@Html.DisplayFor(modelItem => item.ISBN)'>
+                            <h4 class="book-title"> @Html.DisplayFor(modelItem => item.Nombre)</h4>
                             <span class="book-author">@Html.DisplayFor(modelItem => item.autores.Nombre)</span>
                             <button class="book-rent">Rentar</button>
                         </div>
