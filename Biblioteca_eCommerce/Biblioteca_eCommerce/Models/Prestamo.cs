@@ -16,12 +16,14 @@ namespace Biblioteca_eCommerce.Models
         public int IdLibro { get; set; }
         [Required(ErrorMessage = "Elija el usuario")]
         public int IdUsuarios { get; set; }
+        [Required(ErrorMessage="Debe elejir la fecha")]
         [DataType(DataType.Date)]
         public DateTime FechaPrest { get; set; }
         [DataType(DataType.Date)]
         public DateTime FechaDevol { get; set; }
         public float MontoxDia { get; set; }
         public int cantDias { get; set; }
+        [StringLength(256)]
         public string Comentario { get; set; }
         public int estado { get; set; }
 
