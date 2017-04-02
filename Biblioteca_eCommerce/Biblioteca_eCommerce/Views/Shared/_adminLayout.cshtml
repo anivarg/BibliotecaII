@@ -33,80 +33,72 @@
 <body>
     <div id="wrapper">
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Area Administrativa Biblioteca UNAPEC</a>
-
-                @*@if (Context.Session.GetString("IdUsuario") != null)
-                {
-                        <li><a asp-area="" asp-controller="home" asp-action="Logout">Logout</a></li>
-                }
-                else
-                {
-                        <li><a asp-area="" asp-controller="home" asp-action="registroUsuarios">Registrate</a></li>
-                        <li><a asp-area="" asp-controller="home" asp-action="LoggedIn">Login</a></li>
-                }*@
-
-            </div>
-            <!-- /.navbar-header -->
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <!-- /input-group -->
+        <header>
+            <nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Area Administrativa Biblioteca UNAPEC</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search">
+                                <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                            <li>
+                                @Html.ActionLink("Panel de Control", "Index", "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Empleados", "Index", "Empleadoes")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Usuarios", "Index", "Usuarios")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Libros", "Index", "Libroes")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Prestamos", "Index", "Prestamoes")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Autores", "Index", "autores")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Editoras", "Index", "Editoras")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Bibliografias", "Index", "Bibliografias")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Idiomas", "Index", "Idiomas")
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            @Html.ActionLink("Panel de Control", "Index", "Home")
-                        </li>
-                        <li>
-                           @Html.ActionLink("Empleados", "Index", "Empleadoes")
-                        </li>
-                        <li>
-                           @Html.ActionLink("Usuarios", "Index", "Usuarios")
-                        </li>
-                        <li>
-                            @Html.ActionLink("Libros", "Index", "Libroes")
-                        </li>
-                        <li>
-                            @Html.ActionLink("Prestamos", "Index", "Prestamoes")
-                        </li>
-                        <li>
-                            @Html.ActionLink("Autores", "Index", "autores")
-                        </li>
-                        <li>
-                            @Html.ActionLink("Editoras", "Index", "Editoras")
-                        </li>
-                        <li>
-                            @Html.ActionLink("Bibliografias", "Index", "Bibliografias")
-                        </li>
-                        <li>
-                            @Html.ActionLink("Idiomas", "Index", "Idiomas")
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                    </li>
-                    </ul>
-                </div>                     <li
+                        </ul>
+                    </div>                     <li
                 <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+        </header>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
