@@ -15,7 +15,7 @@ namespace Biblioteca_eCommerce.Controllers
         private BibliotecaDbContext db = new BibliotecaDbContext();
 
         // GET: Libroes
-        //[Authorize(Roles = "Administrador, Empleado")]
+        [Authorize(Roles = "Administrador, Empleado")]
         public ActionResult Index(string Criterio = null)
         {
             var libros = db.Libros.Where(p => Criterio == null || p.Nombre.StartsWith(Criterio)).Include(l => l.autores).Include(l => l.Bibliografia).Include(l => l.Editora);

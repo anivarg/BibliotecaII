@@ -34,10 +34,10 @@ namespace Biblioteca_eCommerce.Controllers
         }
         public ActionResult Reservar(FormCollection form)
         {
-            var IdLibro = form["IdLibro"];
-            var IdUser = form["IdUsuario"];
-            ViewBag.Libro = IdLibro;
-            ViewBag.Usuario = IdUser;
+            //var IdLibro = form["IdLibro"];
+            //var IdUser = form["IdUsuario"];
+            //ViewBag.Libro = IdLibro;
+            //ViewBag.Usuario = IdUser;
             return View();
         }
         [HttpPost]
@@ -46,13 +46,9 @@ namespace Biblioteca_eCommerce.Controllers
             var IdLibroq = form["IdLibro"];
             var conversion = Int32.Parse(IdLibroq);
             var libroDB = reserva.IdLibro;
-
             var tmm = 2;
-
             var IdUserq = form["IdUsuario"];
             var UsuarioDB = reserva.IdUsuario;
-
-            
 
             if (ModelState.IsValid)
             {

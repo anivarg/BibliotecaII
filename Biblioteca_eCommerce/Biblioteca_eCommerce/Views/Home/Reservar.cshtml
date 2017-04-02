@@ -6,10 +6,14 @@
 }
 
 <h2>Reservar</h2>
+@if (Request.IsAuthenticated)
+{
+    <h2> Nombre de Libro: @ViewBag.Error </h2>
 
-INT 1 = @ViewBag.LibroId1 <br />
-INT 2 = @ViewBag.LibroId2 <br />
+} else
+{
+    <h2> Debe Logearse,</h2>
+    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
 
-
-Nombre de Libro: @ViewBag.Error <br />  
-
+}

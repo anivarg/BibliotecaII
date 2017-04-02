@@ -21,18 +21,14 @@
                             <h4 class="book-title"> @Html.DisplayFor(modelItem => item.Nombre)</h4>
                             <span class="book-author">@Html.DisplayFor(modelItem => item.autores.Nombre)</span>
                             <!--Boton para relacionar los libros con el usuario, cambiar cuando se este completo-->
-                            @if (Request.IsAuthenticated)
-                            {
+                            
+                            
                                 <form action=@Url.Action("Reservar", "Home") method="post">
                                     <input type="hidden" id="IdLibro" name="IdLibro" value=@Html.DisplayFor(modelItem => item.IdLibro) />
                                     <input type="hidden" id="IdUsuario" name="IdUsuario" value=@Html.Raw(User.Identity.GetUserName()) />
                                     <input type="submit" value="Rentar" class="btn btn-danger">
                                 </form>
-                            }
-                            else
-                            {
-                                <p> Logeese si quiere ver algo por aqui vacano!</p>
-                            }
+
                             <!--Boton para agregar que cambie luego de el click-->
                             <!--<button type="submit" class="book-rent"> Rentar </button>-->
                         </div>
