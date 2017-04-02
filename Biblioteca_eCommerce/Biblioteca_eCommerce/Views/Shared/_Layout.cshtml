@@ -28,26 +28,57 @@
             </div>
         </nav>
     </header>
-    
- 
+    <div>
+        @Html.Partial("_SearchPartial")
+    </div>
+    <div class="container">
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
+     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 
-    <script>
-        $(document).ready(function () {
-            $('.book-rent').on('click', function (event) {
-                event.preventDefault();
-                $(this).text('Rentado');
+        <script>
+
+            var confirmation = {
+                init: function () {
+                    var booklist = $('.book-panel').toArray();
+                    //
+                    $.each(booklist, function (i, e) {
+                        var dato = $(this).find('.book-description').data('isbn');
+                        var libro = $(this);
+                        console.log(this)
+                        $.ajax({
+                            url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + dato,
+                            dataType: 'json',
+                            success: function (response) {
+                                //console.log(this)
+                                //var title = response.items[0].volumeInfo.title;
+                                var thumb = response.items[0].volumeInfo.imageLinks.thumbnail;
+                                //libro.find('.title').text(title);
+                                libro.find('.book-cover > img').attr('src', thumb);
+
+                            }
+                        })
+                    })
+                }
+
+            }
+
+            $(document).ready(function () {
+                $('.book-rent').on('click', function (event) {
+                    event.preventDefault();
+                    $(this).text('Rentado');
+                })
+
+                confirmation.init();
+
             })
-
-        })
-    </script>
-    </body>
+        </script>
+</body>
 </html>
