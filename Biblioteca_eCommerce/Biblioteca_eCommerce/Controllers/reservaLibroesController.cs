@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Biblioteca_eCommerce.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Biblioteca_eCommerce.Controllers
 {
@@ -19,8 +20,8 @@ namespace Biblioteca_eCommerce.Controllers
         // GET: reservaLibroes
         public ActionResult Index(string Criterio = null)
         {
-           // var TryF = "0";
-            var filtro = db.reservaActiva.Where(p => Criterio == null || p.IdUsuario.StartsWith(Criterio));
+            var usuario = User.Identity.GetUserName();
+            var filtro = db.reservaActiva.Where(p => p.IdUsuario.StartsWith(usuario));
             return View(filtro.ToList());
         }
 
@@ -42,6 +43,7 @@ namespace Biblioteca_eCommerce.Controllers
         // GET: reservaLibroes/Create
         public ActionResult Create()
         {
+            ViewBag.IdLibro = new SelectList(db.Libros, "IdLibro", "Nombre");
             return View();
         }
 
@@ -58,7 +60,7 @@ namespace Biblioteca_eCommerce.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.IdLibro = new SelectList(db.Libros, "IdLibro", "Nombre");
             return View(reservaLibro);
         }
 
@@ -74,6 +76,7 @@ namespace Biblioteca_eCommerce.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IdLibro = new SelectList(db.Libros, "IdLibro", "Nombre");
             return View(reservaLibro);
         }
 
@@ -90,6 +93,7 @@ namespace Biblioteca_eCommerce.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.IdLibro = new SelectList(db.Libros, "IdLibro", "Nombre");
             return View(reservaLibro);
         }
 

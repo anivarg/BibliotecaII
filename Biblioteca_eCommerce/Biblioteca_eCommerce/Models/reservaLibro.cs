@@ -11,6 +11,7 @@ namespace Biblioteca_eCommerce.Models
         [Key]
         public int IdReserva { get; set; }
         public string IdUsuario { get; set; }
-        public string IdLibro { get; set; }
+        public int IdLibro { get; set; }
+        public virtual Libro Libro { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace Biblioteca_eCommerce.Models
     {
         public Libro() {
 
-            this.Prestamo = new HashSet<Prestamo>();
+            this.reservaLibro = new HashSet<reservaLibro>();
         }
 
         [Key]
@@ -44,7 +44,7 @@ namespace Biblioteca_eCommerce.Models
         public virtual Idioma Idioma { get; set; }
         public virtual Editora Editora { get; set; }
 
-        public virtual ICollection<Prestamo> Prestamo { get; set; }
+        public virtual ICollection<reservaLibro> reservaLibro { get; set; }
 
     }
 }
