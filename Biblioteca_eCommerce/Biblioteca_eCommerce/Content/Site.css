@@ -41,7 +41,7 @@ textarea {
 }
 
 .navbar-brand { /*Logo*/
-    background: url(images/logo.png) no-repeat;
+    background: url(images/logow.png) no-repeat;
     text-indent: -2000px;
     height: auto;
     margin: 10px 5px 0px 5px;
@@ -78,7 +78,7 @@ textarea {
 .book-cover img {
     height:250px;
     margin: auto;
-    width:100%;
+    width:auto;
 }
 
 .book-title {
