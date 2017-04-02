@@ -31,5 +31,25 @@ namespace Biblioteca_eCommerce.Controllers
 
             return View();
         }
+        public ActionResult Reservar(FormCollection form)
+        {
+            //var IdLibro = form["IdLibro"];
+            //var IdUser = form["IdUsuario"];
+            //ViewBag.Libro = IdLibro;
+            //ViewBag.Usuario = IdUser;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Reservar([Bind(Include = "IdReserva,IdUsuario,IdLibro")] reservaLibro reserva)
+        {
+            if (ModelState.IsValid)
+            {
+                db.reservaActiva.Add(reserva);
+                db.SaveChanges();
+                //return RedirectToAction("Index");
+            }
+
+            return View(reserva);
+        }
     }
 }

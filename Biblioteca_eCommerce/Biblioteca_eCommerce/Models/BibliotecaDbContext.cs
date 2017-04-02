@@ -16,5 +16,7 @@ namespace Biblioteca_eCommerce.Models
             public DbSet<Bibliografia> Bibliografias { get; set; }
             public DbSet<Editora> Editoras { get; set; }
             public DbSet<Idioma> Idiomas { get; set; }
+            public DbSet<reservaLibro> reservaActiva { get; set; }
+
     }
 }

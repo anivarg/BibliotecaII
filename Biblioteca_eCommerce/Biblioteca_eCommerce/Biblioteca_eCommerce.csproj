@@ -207,6 +207,7 @@
     <Compile Include="Controllers\LibroesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PrestamoesController.cs" />
+    <Compile Include="Controllers\reservaLibroesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -223,6 +224,7 @@
     <Compile Include="Models\Libro.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Prestamo.cs" />
+    <Compile Include="Models\reservaLibro.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -291,6 +293,12 @@
     <Content Include="Views\Shared\_adminLayout.cshtml" />
     <Content Include="Views\AdmHome\Index.cshtml" />
     <Content Include="Views\Shared\_SearchPartial.cshtml" />
+    <Content Include="Views\reservaLibroes\Create.cshtml" />
+    <Content Include="Views\reservaLibroes\Delete.cshtml" />
+    <Content Include="Views\reservaLibroes\Details.cshtml" />
+    <Content Include="Views\reservaLibroes\Edit.cshtml" />
+    <Content Include="Views\reservaLibroes\Index.cshtml" />
+    <Content Include="Views\Home\Reservar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
